@@ -1,10 +1,10 @@
 import React from "react"
 
-const Foods = () => {
+const Cars = () => {
     return (
         <div className="jo">
-            Foods
+            Movies
         </div>
     )
 }
-export default Foods
+export default Cars
