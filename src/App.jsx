@@ -1,17 +1,21 @@
 import React from "react";
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Home from './pages/Home'
-import Cars from './pages/Cars'
+import Movies from './pages/Movies'
 import Nav from "./pages/Nav";
+import Landing from "./components/Landing";
+
 
 function App() {
   return (
-  <Router>
+    <Router>
+       <Nav />
+        <Landing />
+        
     <div className="div">
  <Routes>
-  <Route path="/Nav" element = {<Nav />}></Route>
     <Route path="/" element={<Home />}></Route>
-    <Route path ="/:id" element={<Cars />}></Route>
+    <Route path ="/:id" element={<Movies />}></Route>
   </Routes>
   </div>
   </Router>
