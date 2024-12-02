@@ -30,7 +30,7 @@ return (
 <img src={site.Poster} alt="" className="movie__image"/>
 <div className="movie__info">
 <span className="movie__title">{site.Title} </span>
-<span className="movie__Year">{site.Year} </span>
+<span className="movie__year">{site.Year} </span>
 </div>
 </div>
 </div>)}
