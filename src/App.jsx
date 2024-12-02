@@ -6,16 +6,26 @@ import Nav from "./pages/Nav";
 import Landing from "./components/Landing";
 
 
+
+
 function App() {
+ 
+ 
+ 
   return (
+    
+    
     <Router>
        <Nav />
         <Landing />
         
+        
     <div className="div">
  <Routes>
-    <Route path="/" element={<Home />}></Route>
-    <Route path ="/:id" element={<Movies />}></Route>
+    <Route path="/" element={<Home />} ></Route>
+    <Route path ="/:id" element={<Movies />} ></Route>
+    <Route path ="/lan" element={<Landing />} ></Route>
+    
   </Routes>
   </div>
   </Router>

@@ -24,6 +24,12 @@ return (
 <Link to ="https://github.com/Vashae" className="nav__link">
 <li className="nav__list"> Github</li>
 </Link>
+<Link to ="https://www.linkedin.com/in/vashae-blackwood-a57105265/" className="nav__link">
+<li className="nav__list">LinkedIn</li>
+</Link>
+<button className="lightdark__mode">
+<FontAwesomeIcon icon="fa-solid fa-circle-half-stroke" />
+</button>
    </ul>
    </div>
    </nav>

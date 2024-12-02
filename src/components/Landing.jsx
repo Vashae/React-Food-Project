@@ -1,7 +1,16 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
+import {useDebounce} from 'use-debounce';
 
-const Landing = ()=>{
-    return (
+
+import { useParams } from "react-router-dom"
+
+
+ 
+
+
+const Landing = ({onSearchChange})=>{
+   
+   return (
       <div className="landing__container">
         <div className="row">
      <header className="Landing__title">
@@ -10,8 +19,8 @@ const Landing = ()=>{
      <h1 className="landing__subtitle">
         Find the movie you've been itching to watch
      </h1>
-          <input type="text" className="Search__bar"  placeholder="Search" />
-     <button className="search">Search</button>
+          <input type="text" className="Search__bar"  placeholder="Search" onChange={onSearchChange} />
+     <button className="search" >Search</button>
      
 
          </div>
@@ -20,5 +29,8 @@ const Landing = ()=>{
 
 
     
-}
+
+   }
+   
+  
 export default Landing
