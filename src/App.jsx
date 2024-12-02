@@ -5,26 +5,32 @@ import Movies from './pages/Movies'
 import Nav from "./pages/Nav";
 import Landing from "./components/Landing";
 
+import Photo from "./components/Photo";
+
+
+
 
 
 
 function App() {
  
- 
- 
+
   return (
     
     
     <Router>
        <Nav />
         <Landing />
+        <Photo />
+        
+    
         
         
     <div className="div">
  <Routes>
-    <Route path="/" element={<Home />} ></Route>
+    <Route path="/" element={<Home />}  ></Route>
     <Route path ="/:id" element={<Movies />} ></Route>
-    <Route path ="/lan" element={<Landing />} ></Route>
+    <Route path ="/movies:id" element={<Landing />} ></Route>
     
   </Routes>
   </div>

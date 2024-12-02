@@ -5,10 +5,15 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
+body {
+  background-color: black;
+  opacity: 95%;
+}
 .App {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+   
   }
   
 .nav__container {
@@ -40,9 +45,8 @@ ul {
 a {
     text-decoration: none;
 }
-a:hover {
-    text-decoration: underline;
-  }
+
+  
   .nav__link {
     text-decoration: none;
   font-size: 20px;
@@ -50,6 +54,10 @@ a:hover {
   padding: 8px;
   color: black;
   
+  }
+  .nav__list:hover {
+    transform: scale(1.1);
+    transition: all 300ms ease;
   }
   .nav__list {
     margin-left: 16px;
@@ -64,8 +72,16 @@ a:hover {
     justify-content: center;
     font-weight: bold;
     margin-top: 100px;
+    color: white;
   }
-  .Search__bar {
+  .pic {
+    width: 100px;
+    height: 300px;
+   display: flex;
+   justify-content: center;
+   margin-top: 50px;
+  }
+  .search__bar {
     width: 30%;
     display: flex;
     margin-top: 50px;
@@ -73,7 +89,7 @@ a:hover {
     height: 30px;
    border-color: lightgray;
    text-align: center;
-
+margin-bottom: 50px;
    
 
   }
@@ -98,7 +114,12 @@ a:hover {
 .movie__image {
     width: 400px;
     height: 300px;
-    padding:10px;
+    padding:25px;
+}
+.movie__image:hover {
+cursor: pointer;
+transform: scale(1.1);
+transition: all 300ms ease;
 }
 
 h1 {
@@ -109,6 +130,7 @@ h1 {
     justify-content: center;
     align-items: center;
     margin-top: 60px;
+    color: white;
 }
 .search {
     margin-top: 30px;
@@ -137,4 +159,42 @@ color: black;
   margin-left: 16px;
   width: 50%;
 
+}
+.movie__info {
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.movie__title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+a {
+  text-decoration: none;
+}
+.browser {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border-radius: 9999px;
+ background-color: white;
+ color:black;
+ margin-top: 20px;
+ margin-bottom: 20px;
+ width: 400px;
+ height: 50px;
+ text-decoration: none;
+}
+.browser:hover {
+transform: scale(1.1);
+transition: all 300ms ease;
+
+}
+button {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
 }

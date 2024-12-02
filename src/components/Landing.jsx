@@ -1,14 +1,17 @@
 import React, {useState, useEffect} from "react"
-import {useDebounce} from 'use-debounce';
 
 
-import { useParams } from "react-router-dom"
+
+
+
+
 
 
  
 
 
-const Landing = ({onSearchChange})=>{
+const Landing = ()=>{
+   
    
    return (
       <div className="landing__container">
@@ -19,9 +22,11 @@ const Landing = ({onSearchChange})=>{
      <h1 className="landing__subtitle">
         Find the movie you've been itching to watch
      </h1>
-          <input type="text" className="Search__bar"  placeholder="Search" onChange={onSearchChange} />
-     <button className="search" >Search</button>
+     <figure>
      
+     </figure>
+     
+         
 
          </div>
         </div>
