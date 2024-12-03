@@ -16,10 +16,10 @@ return (
 </Link>
 <ul className="nav__links">
      <Link to="/:id" className="nav__link">
-<li className="nav__list">Movies</li>
+<li className="nav__list">Home</li>
 </Link>
 <Link to ="/" className="nav__link">
-<li className="nav__list">Home</li>
+<li className="nav__list">Movies</li>
 </Link>
 <Link to ="https://github.com/Vashae" className="nav__link">
 <li className="nav__list"> Github</li>

@@ -6,6 +6,9 @@ import Nav from "./pages/Nav";
 import Landing from "./components/Landing";
 
 import Photo from "./components/Photo";
+import SearchPage from "./components/SearchPage";
+import ResultsPage from "./components/ResultsPage";
+import DetailsPage from "./components/DetailsPage";
 
 
 
@@ -29,8 +32,10 @@ function App() {
     <div className="div">
  <Routes>
     <Route path="/" element={<Home />}  ></Route>
-    <Route path ="/:id" element={<Movies />} ></Route>
-    <Route path ="/movies:id" element={<Landing />} ></Route>
+    <Route path ="/movies" element={<Movies />} ></Route>
+    <Route path ="/movie" element={<SearchPage />} ></Route>
+    <Route path="/results" element={<ResultsPage />}></Route>
+    <Route path="/details/:imdbID" element={<DetailsPage />} />
     
   </Routes>
   </div>

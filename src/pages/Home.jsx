@@ -21,7 +21,7 @@ Sites();
   
 return (
 <div className="movie__container">
-    <Link to ="/:id">
+    <Link to ="/movie">
     <button className="browser">Search Movies</button>
     </Link>
     <div className="movie__row">
