@@ -110,6 +110,8 @@ margin-bottom: 50px;
     justify-content: center;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
 }
 .movie__image {
     width: 400px;
@@ -207,11 +209,34 @@ button {
   padding-top: 5px;
   color: white;
 }
-p  {color: white;}
+p  {
+  color: white;
+}
 .details__container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 5px 5px 5px 5px;
+  color: #fff;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.pagination button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }

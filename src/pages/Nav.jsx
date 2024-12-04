@@ -11,14 +11,14 @@ const Nav = () => {
 return (
     <nav>
 <div className="nav__container">
-<Link to ="/:id" className="icon">
+<Link to ="/" className="icon">
 <FontAwesomeIcon icon="fa-solid fa-film" />
 </Link>
 <ul className="nav__links">
-     <Link to="/:id" className="nav__link">
+     <Link to="/" className="nav__link">
 <li className="nav__list">Home</li>
 </Link>
-<Link to ="/" className="nav__link">
+<Link to ="/movie" className="nav__link">
 <li className="nav__list">Movies</li>
 </Link>
 <Link to ="https://github.com/Vashae" className="nav__link">

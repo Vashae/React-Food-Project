@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import {Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function ResultsPage() {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1); // Track current page
   const [totalResults, setTotalResults] = useState(0); // Total number of results
+  const [sortField, setSortField] = useState("Title"); // Default sorting field
+  const [sortOrder, setSortOrder] = useState("asc"); // Default sorting order
   const location = useLocation();
 
   // Extract the search term from the query params
@@ -42,40 +44,80 @@ function ResultsPage() {
     }
   };
 
+  // Handle Sorting
+  const handleSort = (field, order) => {
+    const sortedMovies = [...movies].sort((a, b) => {
+      if (field === "Title") {
+        return order === "asc"
+          ? a.Title.localeCompare(b.Title)
+          : b.Title.localeCompare(a.Title);
+      } else if (field === "Year") {
+        return order === "asc"
+          ? parseInt(a.Year) - parseInt(b.Year)
+          : parseInt(b.Year) - parseInt(a.Year);
+      }
+      return 0;
+    });
+    setMovies(sortedMovies);
+  };
+
+  const handleSortChange = (e) => {
+    const selectedField = e.target.value;
+    setSortField(selectedField);
+    handleSort(selectedField, sortOrder);
+  };
+
+  const handleOrderChange = () => {
+    const newOrder = sortOrder === "asc" ? "desc" : "asc";
+    setSortOrder(newOrder);
+    handleSort(sortField, newOrder);
+  };
+
   return (
     <div className="movie__container">
       {isLoading ? (
         <div>Loading...</div>
       ) : (
         <>
+          {/* Sorting Controls */}
+          <div className="sort__controls">
+            <select id="sortField" onChange={handleSortChange}>
+              <option value="Title">Title</option>
+              <option value="Year">Year</option>
+            </select>
+            <button onClick={handleOrderChange}>
+              {sortOrder === "asc" ? "Ascending" : "Descending"}
+            </button>
+          </div>
+
           <div className="movie__row">
-            
             {Array.isArray(movies) && movies.length > 0 ? (
               movies.map((movie) => (
-                <Link to ="/details/:imdbID">
-                <div key={movie.imdbID} className="movie">
-                  <div className="movie__Poster">
-                    <img
-                      src={movie.Poster}
-                      alt={movie.Title}
-                      className="movie__image"
-                    />
-                    <div className="movie__info">
-                      <span className="movie__title">{movie.Title}</span>
-                      <span className="movie__year">{movie.Year}</span>
+                <Link to={`/details/${movie.imdbID}`} key={movie.imdbID}>
+                  <div className="movie">
+                    <div className="movie__Poster">
+                      <img
+                        src={movie.Poster}
+                        alt={movie.Title}
+                        className="movie__image"
+                      />
+                      <div className="movie__info">
+                        <span className="movie__title">{movie.Title}</span>
+                        <span className="movie__year">{movie.Year}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-                 </Link>
+                </Link>
               ))
             ) : (
               <p>No movies found.</p>
             )}
-           
           </div>
+
           {/* Pagination Controls */}
           <div className="pagination">
             <button
+              className="previous"
               onClick={handlePreviousPage}
               disabled={currentPage === 1}
             >
@@ -85,19 +127,16 @@ function ResultsPage() {
               Page {currentPage} of {Math.ceil(totalResults / 10)}
             </span>
             <button
+              className="next"
               onClick={handleNextPage}
               disabled={currentPage === Math.ceil(totalResults / 10)}
             >
               Next
             </button>
-            
           </div>
         </>
-        
       )}
-      
     </div>
-    
   );
 }
 

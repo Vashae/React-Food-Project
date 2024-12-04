@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 function SearchPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
@@ -25,6 +26,9 @@ function SearchPage() {
 
   return (
     <div>
+       <h1>MOVIES</h1>
+   
+       
         <input className="search__bar"
         type="text"
         placeholder="Search for movies"

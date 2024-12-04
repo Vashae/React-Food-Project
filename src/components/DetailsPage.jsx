@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 function DetailsPage() {
   const { imdbID } = useParams(); // Get the movie ID from the URL
-  const [movie, setMovie] = useState(null);
+  const [movie, setMovie] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -31,9 +31,9 @@ function DetailsPage() {
     <div className="details__container">
       <h1>{movie.Title}</h1>
       <img src={movie.Poster} alt={movie.Title} />
-      <p><span>Year:</span> {movie.Year}</p>
-      <p><span>Genre:</span> {movie.Type}</p>
-     
+      <p><span>Year: {movie.Year}</span></p>
+      <p><span>Rated: {movie.Rated}</span></p>
+      <p><span>Genre: {movie.Genre}</span></p>
     </div>
   );
 }
