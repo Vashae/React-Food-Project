@@ -1,7 +1,9 @@
 import React from 'react'
-import  Loader   from 'react-loader-spinner';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const Loading = () => {
-  return 
+  return (<div>
+    <FontAwesomeIcon icon="fa-solid fa-spinner" /> </div>
+  )
     
 } 

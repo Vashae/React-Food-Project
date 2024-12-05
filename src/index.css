@@ -30,8 +30,13 @@ body {
 nav {height: 80px;
 display: flex;
 box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.05);
-background-color: white;
+
 position: relative;
+background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/06/Images-Starry-Night-Wallpapers-HD.jpg);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+font-weight: bold;
 }
 
 li {
@@ -52,7 +57,7 @@ a {
   font-size: 20px;
   font-weight: bold;
   padding: 8px;
-  color: black;
+  color: white;
   
   }
   .nav__list:hover {
@@ -239,4 +244,62 @@ p  {
 .pagination button:disabled {
   cursor: not-allowed;
   opacity: 0.5;
+}
+.fa-spinner {
+  animation: rotate 500ms infinite linear ;
+  color:  white;
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:15%;
+  margin-top: 100px;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg)
+    
+  }
+}
+.sort__controls {
+
+text-align: center;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+ 
+  align-items: center;
+  border-radius: 9999px;
+  
+
+}
+   
+body.dark-mode {
+  background-color: #b5b5b5;
+  color:#b5b5b5;
+}
+
+/* Button Styles */
+.lightdark__mode {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #b5b5b5;
+  color: #ffffff;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.lightdark__mode:hover {
+  background-color: #b5b5b5;
+}
+.final__h1 {
+  font-size:36px;
 }

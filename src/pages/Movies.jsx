@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react"
 import axios from 'axios'
-import { Link } from "react-router-dom";
+import { Loading } from "../components/Loading";
+
 
 
 
@@ -23,7 +24,7 @@ const MovieComponent = () => {
             } else {
                 setMovies([]); // Clear movies if search term is empty
             }
-        }, 1000); // Change the delay time as needed
+        }, 2000); // Change the delay time as needed
 
         // Save the timeout ID
         setDebounceTimeout(timeoutId);
@@ -52,14 +53,14 @@ const MovieComponent = () => {
     return (
         <div className="movie__container">
             {isLoading ? (
-                <div>Loading...</div> // Loader while fetching
+                <div><Loading/></div> // Loader while fetching
             ) : (
                 
                     <> 
                     <input className="search__bar" type="text" onChange={handleSearchChange} placeholder="Search"/>
                  <div className="movie__row">
                     
-             {Array.isArray(movies) && movies.slice(0, 9).map((movie) => (
+             {Array.isArray(movies) && movies.slice(0, 6).map((movie) => (
                         <div key={movie.imdbID} className="movie">
                             <div className="movie__Poster">
                                 <img src={movie.Poster} alt={movie.Title} className="movie__image" />

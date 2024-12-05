@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { Loading } from "./Loading";
 
 function ResultsPage() {
   const [movies, setMovies] = useState([]);
@@ -26,14 +27,14 @@ function ResultsPage() {
       .then((response) => response.json())
       .then((data) => {
         setMovies(data.Search || []);
-        setTotalResults(parseInt(data.totalResults, 10) || 0); // Store total results
+        setTotalResults(parseInt(data.totalResults, 6) || 0); // Store total results
         setIsLoading(false);
       })
       .catch(() => setIsLoading(false));
   };
 
   const handleNextPage = () => {
-    if (currentPage < Math.ceil(totalResults / 10)) {
+    if (currentPage < Math.ceil(totalResults / 6)) {
       setCurrentPage((prevPage) => prevPage + 1);
     }
   };
@@ -51,6 +52,7 @@ function ResultsPage() {
         return order === "asc"
           ? a.Title.localeCompare(b.Title)
           : b.Title.localeCompare(a.Title);
+          
       } else if (field === "Year") {
         return order === "asc"
           ? parseInt(a.Year) - parseInt(b.Year)
@@ -75,13 +77,15 @@ function ResultsPage() {
 
   return (
     <div className="movie__container">
+      <h1>Search Results</h1>
       {isLoading ? (
-        <div>Loading...</div>
+        <div><Loading/></div>
       ) : (
         <>
           {/* Sorting Controls */}
           <div className="sort__controls">
             <select id="sortField" onChange={handleSortChange}>
+              <option value="" disabled selected>Sort</option>
               <option value="Title">Title</option>
               <option value="Year">Year</option>
             </select>
@@ -124,12 +128,12 @@ function ResultsPage() {
               Previous
             </button>
             <span>
-              Page {currentPage} of {Math.ceil(totalResults / 10)}
+              Page {currentPage} of {Math.ceil(totalResults / 6)}
             </span>
             <button
               className="next"
               onClick={handleNextPage}
-              disabled={currentPage === Math.ceil(totalResults / 10)}
+              disabled={currentPage === Math.ceil(totalResults / 6)}
             >
               Next
             </button>

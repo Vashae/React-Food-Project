@@ -4,11 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faFilm, faCircleHalfStroke } from '@fortawesome/free-solid-svg-icons'
+import { faFilm, faCircleHalfStroke, faSpinner,  faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 
 
-library.add (faFilm, faCircleHalfStroke);
+library.add (faFilm, faCircleHalfStroke, faSpinner,  faArrowLeft);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

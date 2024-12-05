@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Loading } from "./Loading";
 
 function DetailsPage() {
   const { imdbID } = useParams(); // Get the movie ID from the URL
@@ -20,7 +21,7 @@ function DetailsPage() {
   }, [imdbID]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div><Loading/></div>;
   }
 
   if (!movie) {
@@ -34,6 +35,7 @@ function DetailsPage() {
       <p><span>Year: {movie.Year}</span></p>
       <p><span>Rated: {movie.Rated}</span></p>
       <p><span>Genre: {movie.Genre}</span></p>
+      <p><span></span></p>
     </div>
   );
 }

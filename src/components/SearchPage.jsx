@@ -26,7 +26,7 @@ function SearchPage() {
 
   return (
     <div>
-       <h1>MOVIES</h1>
+       <h1 className="final__h1">So many Movies to choose from, which one will you Choose?</h1>
    
        
         <input className="search__bar"
