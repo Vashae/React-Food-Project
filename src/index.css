@@ -296,6 +296,10 @@ body.dark-mode {
   justify-content: center;
   gap: 8px;
 }
+.fa-film {
+  color: white;
+
+}
 
 .lightdark__mode:hover {
   background-color: #b5b5b5;
@@ -324,4 +328,5 @@ body.dark-mode {
     width: 80%;
     
   }
+
 }
